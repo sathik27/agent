@@ -26,4 +26,8 @@ def extract_email(text):
       return f"{match.group(1)@{match.group(2)}.{match.group(3)"
       return""
 
-  def create_gmail_url(subject="",body="",
+  def create_gmail_url(subject="",body="",recipients=""):
+    params = urllib.parse.urlencoder({
+      "view" :"cm",
+      "fs":"1",
+      "to":"recipient
