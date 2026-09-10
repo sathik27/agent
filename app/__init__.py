@@ -71,4 +71,11 @@ return jsonify({
     )
 })
 
-except Except
+except Exception as e:
+
+   return jsonify({
+       "success": False,
+       "message": str(0)
+   }), 500
+
+return app
