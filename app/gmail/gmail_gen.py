@@ -25,3 +25,30 @@ Rules:
 - Keep the email natural and concise.
 - Include an appropriate greeting and closing.
 
+Output exactly:
+
+SUBJECT: <subject>
+BODY:
+<email body>
+
+user command:
+{command}
+---
+
+   url = {
+       f"https://generativelanguage.googleapis.com/"
+       f"v1beta/models/(MODEL):generatecontent"
+   }
+
+   payload = {
+     "contents: [{"parts": [{"text": prompt}]}],
+     "generationconfig": {
+       "temperature": 0.7,
+       "maxoutputTokens":800
+     }
+  }
+
+  req = urllib.request.Request(
+     url,
+     data=json.dumps(payload).encode()
+
